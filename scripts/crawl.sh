@@ -6,16 +6,18 @@
 
 # set -x
 
-batch=$1
+batch=1000
 size=`expr ${#batch} - 1`
 maxproc=50
 
+echo "batch size maxproc"
 echo $batch
 echo $size
 echo $maxproc
 
 
-dir='chunks'$batch
+dir=$HOME'/projects/chunks'$batch
+echo $dir
 mkdir -p $dir
 # rm -rf chunks/*
 split -l $batch alexa $dir'/' -d --additional-suffix=.txt -a $size
