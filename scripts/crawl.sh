@@ -4,7 +4,7 @@
 
 # ls *.gz | awk -F'.warc.gz' '{print $1}' | xargs rm
 
-# set -x
+set -x
 
 batch=1000
 size=`expr ${#batch} - 1`
@@ -37,7 +37,7 @@ do
     if [ $(pgrep wget -c) -lt $maxproc ]; then
         echo $file
         wget -H "user-agent: $useragent" -i $file --warc-file=$file -t 3 --timeout=4 -q -o /dev/null -O /dev/null &
-        sleep 1
+        sleep 2
     else
         sleep 300
         for filename in `find $dir -name '*.warc' -mmin +5`
