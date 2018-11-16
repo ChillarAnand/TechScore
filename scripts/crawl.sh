@@ -2,25 +2,17 @@
 
 # download warc files for given websites
 
-# ls *.gz | awk -F'.warc.gz' '{print $1}' | xargs rm
-
 set -x
 
 batch=1000
 size=`expr ${#batch} - 1`
 maxproc=50
-
-echo "batch size maxproc"
-echo $batch
-echo $size
-echo $maxproc
-
-
+file=urls.txt
 dir=$HOME'/projects/chunks'$batch
-echo $dir
+
+
 mkdir -p $dir
-# rm -rf chunks/*
-split -l $batch alexa $dir'/' -d --additional-suffix=.txt -a $size
+split -l $batch $file $dir'/' -d --additional-suffix=.txt -a $size
 sleep 1
 
 useragent='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'
