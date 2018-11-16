@@ -7,9 +7,8 @@
         <title>TechScore</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="./bootstrap.css" media="screen">
-        <!-- <link rel="stylesheet" href="./custom.min.css"> -->
-
+        <link rel="stylesheet" href="bootstrap.min.css" media="screen">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" media="screen">
 
         <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -32,6 +31,10 @@
                     <ul class="navbar-nav">
 
                         <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/chillarAnand/TechScore/">Source</a>
+
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="/about/">About</a>
                         </li>
 
@@ -46,23 +49,24 @@
         <br/>
         <div class="container">
 
-            <table id="tech" class="display table">
-                <thead>
-                    <tr>
-                        <th>Technology</th>
-                        <th>Category</th>
-                        <th>TechScore</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>tech1</td>
-                        <td>cat1</td>
-                        <td>score2</td>
-                    </tr>
-                </tbody>
-            </table>
-
+            <div class="table-responsive">
+                <table id="tech" class="display table table-bordered table-hover table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Technology</th>
+                            <th>Category</th>
+                            <th>TechScore</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <div class="container">
@@ -78,7 +82,6 @@
         source='https://raw.githubusercontent.com/ChillarAnand/TechScore/master/tech.json';
 
         $.getJSON(source, function(data) {
-            console.log(data['data']);
             $('#tech').DataTable( {
                 data: data['data'],
                 "pageLength": 1500,
