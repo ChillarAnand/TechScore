@@ -31,13 +31,20 @@
                     <ul class="navbar-nav">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/chillarAnand/TechScore/">Source</a>
-
+                            <a class="nav-link" href="#home">Home</a>
                         </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" href="/about/">About</a>
+                            <a class="nav-link" href="#technologies">Technologies</a>
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="#data">Data</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/chillarAnand/TechScore/">Source Code</a>
+                        </li>
                     </ul>
 
                 </div>
@@ -47,27 +54,64 @@
         <br/>
         <br/>
         <br/>
-        <div class="container">
 
-            <div class="table-responsive">
-                <table id="tech" class="display table table-bordered table-hover table-condensed">
-                    <thead>
-                        <tr>
-                            <th>Technology</th>
-                            <th>Category</th>
-                            <th>TechScore</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
+        <section class="home" id="home">
+            <div class="container">
+                TechScore provides insights into the trends in technologies used by the top 1 million websites.
             </div>
-        </div>
+        </section>
+
+
+        <!-- technologies -->
+        <section id="technologies">
+            <div class="container">
+                <div class="table-responsive">
+                    <table id="tech" class="display table table-bordered table-hover table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Technology</th>
+                                <th>Category</th>
+                                <th>TechScore</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- data -->
+        <section id="data">
+            <br/>
+            <br/>
+            <br/>
+
+            <div class="container">
+                <h2>TechScore Data</h2>
+                <p>
+                    TechScore crawls home page of top 1 million alexa websites and stores data in warc format.
+                    Raw data can be downloaded <a href="https://www.kaggle.com/anandreddypandikunta/techscore">from here</a>.
+
+                    We are planning to increase our dataset by crawling upto 20 pages on a website instead of just homepage.
+                    This results in improved accuracy of technology detection.
+                </p>
+
+                <p>
+                    In the long run, we want to crawl all the websites on internet and perform analysis on them.
+                    We are also looking into <a href="http://commoncrawl.org">CommonCrawl</a> to reuse the crawl data.
+                </p>
+
+            </div>
+        </section>
+
+
 
         <div class="container">
 
